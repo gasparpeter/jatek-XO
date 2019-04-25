@@ -21,13 +21,17 @@ var gameplayComponent = function () {
 
     this.nyertValaki         = null;
 
-    this.tabla               = [
-                [-1, -1, -1],
-                [-1, -1, -1],
-                [-1, -1, -1]
-     ];
+    this.tabla               = null;
 
     this.startGame = function () {
+
+
+        this.tabla = [
+            [-1, -1, -1],
+            [-1, -1, -1],
+            [-1, -1, -1]
+        ];
+
         console.log("A jatek elindult..");
         this.cim.innerText = "Jatek folyamatban..";
         this.jelenjmeg();
@@ -36,7 +40,7 @@ var gameplayComponent = function () {
         console.log( "GLOBAL Player 1: ", PLAYER_ONE_USERNAME );
         console.log( "GLOBAL Player 2: ", PLAYER_TWO_USERNAME );
 
-
+        this.currentPlayer = this.player1;
         // var randomStart = Math.round( Math.random() );
 
 
@@ -56,6 +60,7 @@ var gameplayComponent = function () {
     };
 
     this.jelenjmeg = function () {
+        console.log(this.tabla)
         this.container.innerHTML = null;
         for (var i = 0; i < this.tabla.length; i++) {
 
@@ -91,7 +96,7 @@ var gameplayComponent = function () {
     };
 
     this.negyzetListener = function (e) {
-
+console.log(this.currentPlayer)
         if (this.nyertValaki) {
             this.alcim.innerText = "ne meg klikkelj a faszamba";
             return;
@@ -144,11 +149,11 @@ var gameplayComponent = function () {
         }
 
         this.reset.addEventListener("click", function () {
-            selfie.tabla = [
-                [-1, -1, -1],
-                [-1, -1, -1],
-                [-1, -1, -1]
-            ];
+            // selfie.tabla = [
+            //     [-1, -1, -1],
+            //     [-1, -1, -1],
+            //     [-1, -1, -1]
+            // ];
 
             selfie.startGame();
 
