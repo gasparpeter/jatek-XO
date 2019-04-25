@@ -1,0 +1,122 @@
+
+h1, h2 {
+    text-align: center;
+    font-size: 35px;
+    display: none;
+}
+
+label, input {
+    display: block;
+    margin: 25px auto auto;
+    text-align: center;
+}
+
+label {
+    font-size: 25px;
+}
+
+input {
+    height: 75px;
+    width: 320px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+html {
+    background-color: #3f676b;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+
+#containerem {
+    width: 630px;
+    height: 630px;
+    background-color: #c9aaff;
+    margin: 100px auto auto;
+    padding: 5px;
+    display: none;
+}
+
+.sor {
+    width: 100%;
+    height: 210px;
+    margin: 1px auto auto auto;
+}
+
+.negyzet {
+    width: 200px;
+    height: 200px;
+    background-color: #445f80;
+    display: inline-block;
+    float: left;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.X {
+    background-image: url("http://worldartsme.com/images/free-x-clipart-1.jpg");
+    background-size: 100%;
+}
+
+.O {
+    background-image: url("http://www.clker.com/cliparts/3/F/h/l/W/o/cyrillic-letter-o-md.png");
+    background-size: 103%;
+}
+
+#start-container {
+    width: 800px;
+    height: 400px;
+    /*background-color: maroon;*/
+    margin: 200px auto auto;
+    display: block;
+}
+
+#gomb {
+    /*border: none;*/
+    width: 600px;
+    height: 170px;
+    background-color: #688b8a;
+    margin: 100px auto auto;
+    display: block;
+    font-size: 30px;
+}
+
+.ply1 {
+    width: 160px;
+    height: 60px;
+    display: block;
+    margin: auto;
+}
+
+.ply2 {
+    width: 160px;
+    height: 60px;
+    display: block;
+    margin: auto;
+}
+
+.hhh {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: auto;
+}
+
+#idkbra {
+    color: #118b00;
+    display: block;
+    margin: auto;
+}
+
+#reset {
+    margin: 25px auto auto;
+    height: 75px;
+    width: 250px;
+    display: none;
+}
+
