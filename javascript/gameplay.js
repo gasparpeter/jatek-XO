@@ -35,7 +35,7 @@ var gameplayComponent = function () {
         console.log("A jatek elindult..");
         this.cim.innerText = "Jatek folyamatban..";
         this.jelenjmeg();
-        this.alcim.innerText =  lobby.elsoJatekosInput.value + " " + "jatekos lephet";
+       
 
         console.log( "GLOBAL Player 1: ", PLAYER_ONE_USERNAME );
         console.log( "GLOBAL Player 2: ", PLAYER_TWO_USERNAME );
