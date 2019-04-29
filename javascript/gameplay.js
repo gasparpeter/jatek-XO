@@ -35,22 +35,24 @@ var gameplayComponent = function () {
         console.log("A jatek elindult..");
         this.cim.innerText = "Jatek folyamatban..";
         this.jelenjmeg();
-       
+
 
         console.log( "GLOBAL Player 1: ", PLAYER_ONE_USERNAME );
         console.log( "GLOBAL Player 2: ", PLAYER_TWO_USERNAME );
 
         this.currentPlayer = this.player1;
-        // var randomStart = Math.round( Math.random() );
 
 
-        // if (randomStart === 0) {
-        //     alcim.innerText = player1Input.value + "jatekos lephet";
-        //     currentPlayer = player1;
-        // }else {
-        //     alcim.innerText = player2Input.value  + "jatekos lephet";
-        //     currentPlayer = player2;
-        // }
+        var randomStart = Math.round( Math.random() );
+
+
+        if ( randomStart === 0)  {
+            this.alcim.innerText = lobby.elsoJatekosInput.value + " " +  "jatekos lephet";
+            this.currentPlayer = this.player1;
+        }else {
+            this.alcim.innerText = lobby.masodikJatekosInput.value + " " + "jatekos lephet";
+            this.currentPlayer = this.player2;
+        }
 
         this.nyertValaki = false;
     };
