@@ -120,3 +120,25 @@ ul {
     display: none;
 }
 
+#back-lobby {
+    text-align: center;
+    display: block;
+}
+
+#back-lobby1 {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+#back-lobby2 {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+

@@ -62,7 +62,7 @@ var gameplayComponent = function () {
     };
 
     this.jelenjmeg = function () {
-        console.log(this.tabla)
+        console.log(this.tabla);
         this.container.innerHTML = null;
         for (var i = 0; i < this.tabla.length; i++) {
 
