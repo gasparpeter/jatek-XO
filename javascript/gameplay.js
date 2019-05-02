@@ -25,6 +25,13 @@ var gameplayComponent = function () {
 
     this.startGame = function () {
 
+        if ( lobby.elsoJatekosInput.value !== "" ) {
+            this.player1Name = lobby.elsoJatekosInput.value;
+        }
+
+        if ( lobby.masodikJatekosInput.value !== "" ) {
+            this.player2Name = lobby.masodikJatekosInput.value;
+        }
 
         this.tabla = [
             [-1, -1, -1],
@@ -46,11 +53,11 @@ var gameplayComponent = function () {
         var randomStart = Math.round( Math.random() );
 
 
-        if ( randomStart === 0)  {
-            this.alcim.innerText = lobby.elsoJatekosInput.value + " " +  "jatekos lephet";
+        if ( randomStart === 0 )  {
+            this.alcim.innerText = this.player1Name + " " +  "jatekos lephet";
             this.currentPlayer = this.player1;
         }else {
-            this.alcim.innerText = lobby.masodikJatekosInput.value + " " + "jatekos lephet";
+            this.alcim.innerText = this.player2Name + " " + "jatekos lephet";
             this.currentPlayer = this.player2;
         }
 
@@ -98,7 +105,7 @@ var gameplayComponent = function () {
     };
 
     this.negyzetListener = function (e) {
-console.log(this.currentPlayer)
+
         if (this.nyertValaki) {
             this.alcim.innerText = "ne meg klikkelj a faszamba";
             return;
@@ -121,12 +128,12 @@ console.log(this.currentPlayer)
 
         this.jelenjmeg();
 
-        if (this.currentPlayer === this.player1) {
+        if ( this.currentPlayer === this.player1 ) {
             this.currentPlayer = this.player2;
-            this.alcim.innerText = lobby.elsoJatekosInput.value + " " +  "jatekos lephet..";
+            this.alcim.innerText = this.player2Name + " " +  "jatekos lephet..";
         }else {
             this.currentPlayer = this.player1;
-            this.alcim.innerText = lobby.masodikJatekosInput.value + " " +  "jatekos lephet..";
+            this.alcim.innerText = this.player1Name + " " +  "jatekos lephet..";
         }
 
 
@@ -135,16 +142,16 @@ console.log(this.currentPlayer)
             this.reset.style.display = "block";
         }
         // ----------------------------------------------
-        if (this.egyenloSor() === 0) {
+        if ( this.egyenloSor() === 0 ) {
             this.reset.style.display = "block";
-            this.cim.innerText = lobby.elsoJatekosInput.value + " " + "jatekos nyert";
+            this.cim.innerText = this.player1Name + " " + "jatekos nyert";
             this.alcim.innerText = null;
 
             this.nyertValaki = true;
 
-        }else if (this.egyenloSor() === 1) {
+        }else if ( this.egyenloSor() === 1 ) {
             this.reset.style.display = "block";
-            this.cim.innerText = lobby.masodikJatekosInput.value + " " + "jatekos nyert";
+            this.cim.innerText = this.player2Name + " " + "jatekos nyert";
             this.alcim.innerText = null;
 
             this.nyertValaki = true;
