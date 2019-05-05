@@ -2,10 +2,10 @@ var lobbyComponent = function () {
 
     var self = this;
 
-    this.startContainer = document.getElementById("start-container");
+    this.startContainer = document.getElementById("lobby-container");
     this.elsoJatekosInput = document.getElementById("name-input-player1");
     this.masodikJatekosInput = document.getElementById("name-input-player2");
-    this.button = document.getElementById("gomb");
+    this.button = document.getElementById("letsplay-gomb");
 
 
 

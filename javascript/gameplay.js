@@ -5,7 +5,7 @@ var gameplayComponent = function () {
     var selfie = this;
 
 
-    this.container           = document.getElementById("containerem");
+    this.container           = document.getElementById("gameplay-container");
     this.playerNev           = document.createElement("h2");
     this.reset               = document.getElementById("reset");
     this.cim                 = document.getElementById("valamiid1");

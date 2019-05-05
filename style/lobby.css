@@ -1,0 +1,55 @@
+label, input {
+    display: block;
+    margin: 25px auto auto;
+    text-align: center;
+}
+
+label {
+    font-size: 25px;
+}
+
+input {
+    height: 75px;
+    width: 320px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.hhh {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: auto;
+}
+
+#lobby-container {
+    width: 800px;
+    height: 400px;
+    /*background-color: maroon;*/
+    margin: 200px auto auto;
+    display: block;
+}
+
+#letsplay-gomb {
+    /*border: none;*/
+    width: 600px;
+    height: 170px;
+    background-color: #688b8a;
+    margin: 100px auto auto;
+    display: block;
+    font-size: 30px;
+}
+
+.ply1 {
+    width: 160px;
+    height: 60px;
+    display: block;
+    margin: auto;
+}
+
+.ply2 {
+    width: 160px;
+    height: 60px;
+    display: block;
+    margin: auto;
+}
