@@ -23,7 +23,15 @@ var gameplayComponent = function () {
 
     this.tabla               = null;
 
+    this.backToLobby        = document.getElementById("back-lobby");
+    this.igenBtn            = document.getElementById("back-lobby1");
+    this.nemBtn             = document.getElementById("back-lobby2");
+
+
+
     this.startGame = function () {
+
+
 
         if ( lobby.elsoJatekosInput.value !== "" ) {
             this.player1Name = lobby.elsoJatekosInput.value;
@@ -51,6 +59,7 @@ var gameplayComponent = function () {
 
 
         var randomStart = Math.round( Math.random() );
+
 
 
         if ( randomStart === 0 )  {
@@ -106,6 +115,8 @@ var gameplayComponent = function () {
 
     this.negyzetListener = function (e) {
 
+
+
         if (this.nyertValaki) {
             this.alcim.innerText = "ne meg klikkelj a faszamba";
             return;
@@ -136,6 +147,11 @@ var gameplayComponent = function () {
             this.alcim.innerText = this.player1Name + " " +  "jatekos lephet..";
         }
 
+        if ( ! this.maradtakLepesek() || this.egyenloSor() === 0) {
+            this.backToLobby.style.display = "block";
+            this.igenBtn.style.display = "block";
+            this.nemBtn.style.display = "block";
+        }
 
         if ( ! this.maradtakLepesek() ) {
             this.alcim.innerText = "Vege a jateknak.";
@@ -156,6 +172,10 @@ var gameplayComponent = function () {
 
             this.nyertValaki = true;
         }
+
+
+
+
 
         this.reset.addEventListener("click", function () {
             // selfie.tabla = [
@@ -249,6 +269,9 @@ var gameplayComponent = function () {
         }else {
             return true;
         }
+
+
+
     }
 
 

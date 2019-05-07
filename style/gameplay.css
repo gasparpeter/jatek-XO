@@ -54,8 +54,9 @@ h1, h2 {
 }
 
 #back-lobby {
-    text-align: center;
+    text-align: left;
     display: none;
+    margin: 1px;
 }
 
 #back-lobby1 {
@@ -63,7 +64,7 @@ h1, h2 {
     height: 30px;
     text-align: center;
     display: none;
-    margin: auto;
+    margin: 10px;
 }
 
 #back-lobby2 {
@@ -71,5 +72,5 @@ h1, h2 {
     height: 30px;
     text-align: center;
     display: none;
-    margin: auto;
+    margin: 10px;
 }
