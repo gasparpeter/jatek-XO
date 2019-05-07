@@ -32,12 +32,15 @@ h1, h2 {
 }
 
 #gameplay-container {
+    display: none;
+}
+
+#board {
     width: 630px;
     height: 630px;
     background-color: #c9aaff;
     margin: 100px auto auto;
     padding: 5px;
-    display: none;
 }
 
 #idkbra {

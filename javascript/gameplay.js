@@ -6,6 +6,7 @@ var gameplayComponent = function () {
 
 
     this.container           = document.getElementById("gameplay-container");
+    this.board               = document.getElementById("board");
     this.playerNev           = document.createElement("h2");
     this.reset               = document.getElementById("reset");
     this.cim                 = document.getElementById("valamiid1");
@@ -79,7 +80,7 @@ var gameplayComponent = function () {
 
     this.jelenjmeg = function () {
         console.log(this.tabla);
-        this.container.innerHTML = null;
+        this.board.innerHTML = null;
         for (var i = 0; i < this.tabla.length; i++) {
 
             var ul = document.createElement("ul");
@@ -108,8 +109,8 @@ var gameplayComponent = function () {
 
             }
 
-            this.container.appendChild( this.playerNev);
-            this.container.appendChild(ul);
+            // this.board.appendChild( this.playerNev);
+            this.board.appendChild(ul);
         }
     };
 
