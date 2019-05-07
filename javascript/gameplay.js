@@ -147,10 +147,10 @@ var gameplayComponent = function () {
             this.alcim.innerText = this.player1Name + " " +  "jatekos lephet..";
         }
 
-        if ( ! this.maradtakLepesek() || this.egyenloSor() === 0) {
-            this.backToLobby.style.display = "block";
-            this.igenBtn.style.display = "block";
-            this.nemBtn.style.display = "block";
+        if ( ! this.maradtakLepesek() || this.egyenloSor() === 0 || selfie.nyertValaki ) {
+            selfie.backToLobby.style.display = "block";
+            selfie.igenBtn.style.display = "block";
+            selfie.nemBtn.style.display = "block";
         }
 
         if ( ! this.maradtakLepesek() ) {
@@ -173,8 +173,14 @@ var gameplayComponent = function () {
             this.nyertValaki = true;
         }
 
+        this.igenBtn.addEventListener("click", function () {
+            selfie.container.style.display = "none";
+            lobby.startContainer.style.display = "block";
+        });
 
-
+        this.nemBtn.addEventListener("click", function () {
+           selfie.startGame();
+        });
 
 
         this.reset.addEventListener("click", function () {
@@ -184,9 +190,16 @@ var gameplayComponent = function () {
             //     [-1, -1, -1]
             // ];
 
+
             selfie.startGame();
 
+            selfie.backToLobby.style.display = "none";
+            selfie.igenBtn.style.display = "none";
+            selfie.nemBtn.style.display = "none";
+
             reset.style.display = "none";
+
+
         });
 
 
@@ -208,7 +221,7 @@ var gameplayComponent = function () {
             this.tabla[0][0] === this.tabla[2][2]
 
         ) {
-            console.log("nyertunk atlosan")
+            console.log("nyertunk atlosan");
 
             return this.tabla[0][0]
         }else if (
@@ -216,45 +229,44 @@ var gameplayComponent = function () {
             this.tabla[0][0] === this.tabla[1][0] &&
             this.tabla[0][0] === this.tabla[2][0]
 
-
-
         ) {
-            console.log("nyerunk fuggolegesen vaze")
+            console.log("nyerunk fuggolegesen vaze");
             return this.tabla[0][0];
         }else if (
             this.tabla[0][1] !== -1 &&
             this.tabla[0][1] === this.tabla[1][1] &&
             this.tabla[0][1] === this.tabla[2][1]
         ){
-            console.log("nyerunkfuggolegesennnn masodik sorban")
+            console.log("nyerunkfuggolegesennnn masodik sorban");
             return this.tabla[0][1];
         }else if (
             this.tabla[0][2] !== -1 &&
             this.tabla[0][2] === this.tabla[1][2] &&
             this.tabla[0][2] === this.tabla[2][2]
         ) {
-            console.log("3ik sor legyozve")
+            console.log("3ik sor legyozve");
             return this.tabla[0][2];
         }else if (
             this.tabla[0][2] !== -1 &&
             this.tabla[0][2] === this.tabla[1][1] &&
             this.tabla[0][2] === this.tabla[2][0]
         ) {
-            console.log("a masik keresztapa teso")
+            console.log("a masik keresztapa teso");
+
             return this.tabla[0][0];
         }else if (
             this.tabla[1][0] !== -1 &&
             this.tabla[1][0] === this.tabla[1][1] &&
             this.tabla[1][0] === this.tabla[1][2]
         ) {
-            console.log("ezt is megnyertuk")
+            console.log("ezt is megnyertuk");
             return this.tabla[1][0];
         }else if (
             this.tabla[2][0] !== -1 &&
             this.tabla[2][0] === this.tabla[2][1] &&
             this.tabla[2][0] === this.tabla[2][2]
         ) {
-            console.log("nesze neked ct map")
+            console.log("nesze neked ct map");
             return this.tabla[2][0];
         }
         else {
