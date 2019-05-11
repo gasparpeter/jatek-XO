@@ -60,20 +60,26 @@ h1, h2 {
     text-align: left;
     display: none;
     margin: 1px;
+    color: white;
+    font-size: 40px;
 }
 
 #back-lobby1 {
-    width: 80px;
-    height: 30px;
+    width: 120px;
+    height: 50px;
     text-align: center;
     display: none;
     margin: 10px;
 }
 
 #back-lobby2 {
-    width: 80px;
-    height: 30px;
+    width: 120px;
+    height: 50px;
     text-align: center;
     display: none;
     margin: 10px;
+}
+
+#valamiid1, #valamiid2 {
+    color: white;
 }
