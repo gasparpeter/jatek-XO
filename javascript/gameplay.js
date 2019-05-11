@@ -24,15 +24,17 @@ var gameplayComponent = function () {
 
     this.tabla               = null;
 
-    this.backToLobby        = document.getElementById("back-lobby");
-    this.igenBtn            = document.getElementById("back-lobby1");
-    this.nemBtn             = document.getElementById("back-lobby2");
+    this.backToLobbyContainer   = document.getElementById( "back-to-lobby-container" );
+    this.backToLobby            = document.getElementById("back-lobby");
+    this.igenBtn                = document.getElementById("back-lobby1");
+    this.nemBtn                 = document.getElementById("back-lobby2");
 
 
 
     this.startGame = function () {
 
-
+        this.reset.style.display                = "none";
+        this.backToLobbyContainer.style.display = "none";
 
         if ( lobby.elsoJatekosInput.value !== "" ) {
             this.player1Name = lobby.elsoJatekosInput.value;
@@ -72,7 +74,27 @@ var gameplayComponent = function () {
         }
 
         this.nyertValaki = false;
+
+
+        this.igenBtn.addEventListener("click", function () {
+            selfie.container.style.display = "none";
+            lobby.startContainer.style.display = "block";
+            selfie.backToLobbyContainer.style.display = "none";
+        });
+
+
+        this.nemBtn.addEventListener("click", function () {
+            selfie.startGame();
+            selfie.backToLobbyContainer.style.display = "none";
+        });
+
+
+        this.reset.addEventListener("click", function () {
+            selfie.startGame();
+        });
+
     };
+
 
     this.valtoztatas = function (y, x, player) {
         this.tabla[y][x] = player;
@@ -109,14 +131,11 @@ var gameplayComponent = function () {
 
             }
 
-            // this.board.appendChild( this.playerNev);
             this.board.appendChild(ul);
         }
     };
 
     this.negyzetListener = function (e) {
-
-
 
         if (this.nyertValaki) {
             this.alcim.innerText = "ne meg klikkelj a faszamba";
@@ -148,25 +167,20 @@ var gameplayComponent = function () {
             this.alcim.innerText = this.player1Name + " " +  "jatekos lephet..";
         }
 
-        if ( ! this.maradtakLepesek() || this.egyenloSor() === 0 || selfie.nyertValaki ) {
-            selfie.backToLobby.style.display = "block";
-            selfie.igenBtn.style.display = "block";
-            selfie.nemBtn.style.display = "block";
-        }
 
         if ( ! this.maradtakLepesek() ) {
             this.alcim.innerText = "Vege a jateknak.";
             this.reset.style.display = "block";
         }
         // ----------------------------------------------
-        if ( this.egyenloSor() === 0 ) {
+        if ( this.egyenloSor() === this.player1 ) {
             this.reset.style.display = "block";
             this.cim.innerText = this.player1Name + " " + "jatekos nyert";
             this.alcim.innerText = null;
 
             this.nyertValaki = true;
 
-        }else if ( this.egyenloSor() === 1 ) {
+        } else if ( this.egyenloSor() === this.player2 ) {
             this.reset.style.display = "block";
             this.cim.innerText = this.player2Name + " " + "jatekos nyert";
             this.alcim.innerText = null;
@@ -174,103 +188,84 @@ var gameplayComponent = function () {
             this.nyertValaki = true;
         }
 
-        this.igenBtn.addEventListener("click", function () {
-            selfie.container.style.display = "none";
-            lobby.startContainer.style.display = "block";
-        });
 
-        this.nemBtn.addEventListener("click", function () {
-           selfie.startGame();
-        });
+        /** Back to lobby check... */
 
+        if ( ! this.maradtakLepesek() || selfie.nyertValaki ) {
 
-        this.reset.addEventListener("click", function () {
-            // selfie.tabla = [
-            //     [-1, -1, -1],
-            //     [-1, -1, -1],
-            //     [-1, -1, -1]
-            // ];
+            selfie.backToLobbyContainer.style.display = "block";
 
-
-            selfie.startGame();
-
-            selfie.backToLobby.style.display = "none";
-            selfie.igenBtn.style.display = "none";
-            selfie.nemBtn.style.display = "none";
-
-            reset.style.display = "none";
-
-
-        });
-
-
-        this.egyenloSor();
+            // selfie.backToLobby.style.display = "block";
+            // selfie.igenBtn.style.display = "block";
+            // selfie.nemBtn.style.display = "block";
+        }
 
     };
 
     this.egyenloSor = function () {
-        if (this.tabla[0][0] !== -1 &&
+        if ( this.tabla[0][0] !== -1 &&
             this.tabla[0][0] === this.tabla[0][1] &&
             this.tabla[0][0] === this.tabla[0][2]) {
+
             console.log("nyerunk elso sorban");
-
             return this.tabla[0][0];
-
-        }else if (
+        } else if (
             this.tabla[0][0] !== -1 &&
             this.tabla[0][0] === this.tabla[1][1] &&
-            this.tabla[0][0] === this.tabla[2][2]
+            this.tabla[0][0] === this.tabla[2][2] ) {
 
-        ) {
             console.log("nyertunk atlosan");
-
             return this.tabla[0][0]
-        }else if (
+
+        } else if (
             this.tabla[0][0] !== -1 &&
             this.tabla[0][0] === this.tabla[1][0] &&
-            this.tabla[0][0] === this.tabla[2][0]
+            this.tabla[0][0] === this.tabla[2][0] ) {
 
-        ) {
             console.log("nyerunk fuggolegesen vaze");
             return this.tabla[0][0];
-        }else if (
+
+        } else if (
             this.tabla[0][1] !== -1 &&
             this.tabla[0][1] === this.tabla[1][1] &&
-            this.tabla[0][1] === this.tabla[2][1]
-        ){
+            this.tabla[0][1] === this.tabla[2][1] ){
+
             console.log("nyerunkfuggolegesennnn masodik sorban");
             return this.tabla[0][1];
-        }else if (
+
+        } else if (
             this.tabla[0][2] !== -1 &&
             this.tabla[0][2] === this.tabla[1][2] &&
-            this.tabla[0][2] === this.tabla[2][2]
-        ) {
+            this.tabla[0][2] === this.tabla[2][2] ) {
+
             console.log("3ik sor legyozve");
             return this.tabla[0][2];
-        }else if (
+
+        } else if (
             this.tabla[0][2] !== -1 &&
             this.tabla[0][2] === this.tabla[1][1] &&
-            this.tabla[0][2] === this.tabla[2][0]
-        ) {
-            console.log("a masik keresztapa teso");
+            this.tabla[0][2] === this.tabla[2][0] ) {
 
-            return this.tabla[0][0];
-        }else if (
+            console.log("a masik keresztapa teso");
+            return this.tabla[0][2];
+
+        } else if (
             this.tabla[1][0] !== -1 &&
             this.tabla[1][0] === this.tabla[1][1] &&
-            this.tabla[1][0] === this.tabla[1][2]
-        ) {
+            this.tabla[1][0] === this.tabla[1][2]) {
+
             console.log("ezt is megnyertuk");
             return this.tabla[1][0];
-        }else if (
+
+        } else if (
             this.tabla[2][0] !== -1 &&
             this.tabla[2][0] === this.tabla[2][1] &&
-            this.tabla[2][0] === this.tabla[2][2]
-        ) {
+            this.tabla[2][0] === this.tabla[2][2] ) {
+
             console.log("nesze neked ct map");
             return this.tabla[2][0];
-        }
-        else {
+
+        } else {
             return -1;
         }
 
@@ -282,8 +277,6 @@ var gameplayComponent = function () {
         }else {
             return true;
         }
-
-
 
     }
 

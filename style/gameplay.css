@@ -1,7 +1,6 @@
 h1, h2 {
     text-align: center;
     font-size: 35px;
-    display: none;
 }
 
 
@@ -56,9 +55,13 @@ h1, h2 {
     display: none;
 }
 
+
+#back-to-lobby-container {
+    display: none;
+}
+
 #back-lobby {
     text-align: left;
-    display: none;
     margin: 1px;
     color: white;
     font-size: 40px;
@@ -68,7 +71,6 @@ h1, h2 {
     width: 120px;
     height: 50px;
     text-align: center;
-    display: none;
     margin: 10px;
 }
 
@@ -76,7 +78,6 @@ h1, h2 {
     width: 120px;
     height: 50px;
     text-align: center;
-    display: none;
     margin: 10px;
 }
 
