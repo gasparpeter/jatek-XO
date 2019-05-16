@@ -83,3 +83,17 @@ h1, h2 {
 #valamiid1, #valamiid2 {
     color: white;
 }
+
+#pontnev1 {
+    color: #8baeff;
+    display: block;
+    font-size: 50px;
+    margin-left: 5px;
+}
+
+#pontnev2 {
+    color: #8baeff;
+    display: block;
+    font-size: 50px;
+    margin: 10px;
+}

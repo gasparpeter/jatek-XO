@@ -12,6 +12,7 @@ var gameplayComponent = function () {
     this.cim                 = document.getElementById("valamiid1");
     this.alcim               = document.getElementById("valamiid2");
 
+
     this.player1             = 0;
     this.player2             = 1;
 
@@ -24,6 +25,9 @@ var gameplayComponent = function () {
 
     this.tabla               = null;
 
+    this.pontNev1           = document.getElementById("pontnev1");
+    this.pontNev2           = document.getElementById("pontnev2");
+
     this.backToLobby        = document.getElementById("back-lobby");
     this.igenBtn            = document.getElementById("back-lobby1");
     this.nemBtn             = document.getElementById("back-lobby2");
@@ -32,6 +36,8 @@ var gameplayComponent = function () {
 
     this.startGame = function () {
 
+        selfie.pontNev1.value = lobby.elsoJatekosInput.value;
+        selfie.pontNev2.value = lobby.masodikJatekosInput.value;
 
 
         if ( lobby.elsoJatekosInput.value !== "" ) {
