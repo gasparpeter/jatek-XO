@@ -59,7 +59,7 @@ h1, h2 {
 #back-lobby {
     text-align: left;
     display: none;
-    margin: 1px;
+    margin-top: 50px;
     color: white;
     font-size: 40px;
 }
@@ -84,16 +84,21 @@ h1, h2 {
     color: white;
 }
 
-#pontnev1 {
-    color: #8baeff;
-    display: block;
+.jatekos-pontok {
+    width: 218px;
+    height: 145px;
+    background-color: #118b00;
+    margin: 15px;
     font-size: 50px;
-    margin-left: 5px;
+    color: white;
+    text-align: center;
+    position: absolute;
 }
 
-#pontnev2 {
-    color: #8baeff;
-    display: block;
-    font-size: 50px;
-    margin: 10px;
+#jatekos1-pontok {
+    left: 0;
+}
+
+#jatekos2-pontok {
+    right: 0;
 }

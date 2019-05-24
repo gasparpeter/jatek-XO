@@ -5,6 +5,7 @@ var gameplayComponent = function () {
     var selfie = this;
 
 
+
     this.container           = document.getElementById("gameplay-container");
     this.board               = document.getElementById("board");
     this.playerNev           = document.createElement("h2");
@@ -25,8 +26,11 @@ var gameplayComponent = function () {
 
     this.tabla               = null;
 
-    this.pontNev1           = document.getElementById("pontnev1");
-    this.pontNev2           = document.getElementById("pontnev2");
+    this.pontnev1           = document.getElementById("pontnev1");
+    this.pontnev2           = document.getElementById("pontnev2");
+
+    this.pontszam1          = document.getElementById("pontszam1");
+    this.pontszam2          = document.getElementById("pontszam2");
 
     this.backToLobby        = document.getElementById("back-lobby");
     this.igenBtn            = document.getElementById("back-lobby1");
@@ -36,16 +40,15 @@ var gameplayComponent = function () {
 
     this.startGame = function () {
 
-        selfie.pontNev1.value = lobby.elsoJatekosInput.value;
-        selfie.pontNev2.value = lobby.masodikJatekosInput.value;
-
 
         if ( lobby.elsoJatekosInput.value !== "" ) {
             this.player1Name = lobby.elsoJatekosInput.value;
+            this.pontnev1.innerText = this.player1Name;
         }
 
         if ( lobby.masodikJatekosInput.value !== "" ) {
             this.player2Name = lobby.masodikJatekosInput.value;
+            this.pontnev2.innerText = this.player2Name;
         }
 
         this.tabla = [
@@ -172,17 +175,22 @@ var gameplayComponent = function () {
 
             this.nyertValaki = true;
 
+            this.pontszam1.innerText++;
+
         }else if ( this.egyenloSor() === 1 ) {
             this.reset.style.display = "block";
             this.cim.innerText = this.player2Name + " " + "jatekos nyert";
             this.alcim.innerText = null;
 
             this.nyertValaki = true;
+
+            this.pontszam2.innerText++;
         }
 
         this.igenBtn.addEventListener("click", function () {
             selfie.container.style.display = "none";
             lobby.startContainer.style.display = "block";
+            
         });
 
         this.nemBtn.addEventListener("click", function () {
