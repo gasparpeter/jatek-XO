@@ -81,6 +81,38 @@ var gameplayComponent = function () {
         }
 
         this.nyertValaki = false;
+
+
+
+        this.igenBtn.addEventListener("click", function () {
+            // selfie.container.style.display = "none";
+            // lobby.startContainer.style.display = "block";
+            location.reload(true);
+        });
+
+        this.nemBtn.addEventListener("click", function () {
+            selfie.startGame();
+        });
+
+
+        this.reset.addEventListener("click", function () {
+            // selfie.tabla = [
+            //     [-1, -1, -1],
+            //     [-1, -1, -1],
+            //     [-1, -1, -1]
+            // ];
+
+
+            selfie.startGame();
+
+            selfie.backToLobby.style.display = "none";
+            selfie.igenBtn.style.display = "none";
+            selfie.nemBtn.style.display = "none";
+
+            reset.style.display = "none";
+
+
+        });
     };
 
     this.valtoztatas = function (y, x, player) {
@@ -186,36 +218,6 @@ var gameplayComponent = function () {
 
             this.pontszam2.innerText++;
         }
-
-        this.igenBtn.addEventListener("click", function () {
-            selfie.container.style.display = "none";
-            lobby.startContainer.style.display = "block";
-            
-        });
-
-        this.nemBtn.addEventListener("click", function () {
-           selfie.startGame();
-        });
-
-
-        this.reset.addEventListener("click", function () {
-            // selfie.tabla = [
-            //     [-1, -1, -1],
-            //     [-1, -1, -1],
-            //     [-1, -1, -1]
-            // ];
-
-
-            selfie.startGame();
-
-            selfie.backToLobby.style.display = "none";
-            selfie.igenBtn.style.display = "none";
-            selfie.nemBtn.style.display = "none";
-
-            reset.style.display = "none";
-
-
-        });
 
 
         this.egyenloSor();
