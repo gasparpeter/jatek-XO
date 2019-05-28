@@ -87,7 +87,7 @@ h1, h2 {
 .jatekos-pontok {
     width: 218px;
     height: 145px;
-    background-color: #118b00;
+    /*background-color: #118b00;*/
     margin: 15px;
     font-size: 50px;
     color: white;
