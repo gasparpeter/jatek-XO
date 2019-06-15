@@ -17,8 +17,8 @@ var gameplayComponent = function () {
     this.player1             = 0;
     this.player2             = 1;
 
-    this.player1Name         = "1es szamu jatekos";
-    this.player2Name         = "2es szamu jatekos";
+    this.player1Name         = "Player1";
+    this.player2Name         = "Player2";
 
     this.currentPlayer       = null;
 
@@ -57,8 +57,8 @@ var gameplayComponent = function () {
             [-1, -1, -1]
         ];
 
-        console.log("A jatek elindult..");
-        this.cim.innerText = "Jatek folyamatban..";
+        console.log("Started..");
+        this.cim.innerText = "The game is in progress..";
         this.jelenjmeg();
 
 
@@ -73,10 +73,10 @@ var gameplayComponent = function () {
 
 
         if ( randomStart === 0 )  {
-            this.alcim.innerText = this.player1Name + " " +  "jatekos lephet";
+            this.alcim.innerText = this.player1Name + " " +  "coming..";
             this.currentPlayer = this.player1;
         }else {
-            this.alcim.innerText = this.player2Name + " " + "jatekos lephet";
+            this.alcim.innerText = this.player2Name + " " + "coming..";
             this.currentPlayer = this.player2;
         }
 
@@ -160,7 +160,7 @@ var gameplayComponent = function () {
 
 
         if (this.nyertValaki) {
-            this.alcim.innerText = "ne meg klikkelj a faszamba";
+            this.alcim.innerText = "don't click more, u fcking loser";
             return;
         }
 
@@ -169,7 +169,7 @@ var gameplayComponent = function () {
         var X = parseInt( negyzet.getAttribute( "data-X" ) );
         console.log(this.tabla);
         if (this.tabla[Y][X] !== -1) {
-            alert("Ne csalj");
+            alert("Don't cheat, Cyka!");
             return;
         }
 
@@ -183,10 +183,10 @@ var gameplayComponent = function () {
 
         if ( this.currentPlayer === this.player1 ) {
             this.currentPlayer = this.player2;
-            this.alcim.innerText = this.player2Name + " " +  "jatekos lephet..";
+            this.alcim.innerText = this.player2Name + " " +  "coming..";
         }else {
             this.currentPlayer = this.player1;
-            this.alcim.innerText = this.player1Name + " " +  "jatekos lephet..";
+            this.alcim.innerText = this.player1Name + " " +  "coming..";
         }
 
         if ( ! this.maradtakLepesek() || this.egyenloSor() === 0 || selfie.nyertValaki ) {
@@ -196,13 +196,13 @@ var gameplayComponent = function () {
         }
 
         if ( ! this.maradtakLepesek() ) {
-            this.alcim.innerText = "Vege a jateknak.";
+            this.alcim.innerText = "The game is over.";
             this.reset.style.display = "block";
         }
         // ----------------------------------------------
         if ( this.egyenloSor() === 0 ) {
             this.reset.style.display = "block";
-            this.cim.innerText = this.player1Name + " " + "jatekos nyert";
+            this.cim.innerText = this.player1Name + " " + "winner.";
             this.alcim.innerText = null;
 
             this.nyertValaki = true;
@@ -211,7 +211,7 @@ var gameplayComponent = function () {
 
         }else if ( this.egyenloSor() === 1 ) {
             this.reset.style.display = "block";
-            this.cim.innerText = this.player2Name + " " + "jatekos nyert";
+            this.cim.innerText = this.player2Name + " " + "winner";
             this.alcim.innerText = null;
 
             this.nyertValaki = true;
