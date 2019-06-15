@@ -57,3 +57,9 @@ input {
 label {
     color: white;
 }
+
+#nev-utasitas {
+    font-size: 30px;
+    color: white;
+    display: block;
+}
