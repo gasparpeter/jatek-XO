@@ -202,7 +202,7 @@ var gameplayComponent = function () {
         // ----------------------------------------------
         if ( this.egyenloSor() === 0 ) {
             this.reset.style.display = "block";
-            this.cim.innerText = this.player1Name + " " + "winner.";
+            this.cim.innerText = this.player1Name + " " + "won.";
             this.alcim.innerText = null;
 
             this.nyertValaki = true;
@@ -211,7 +211,7 @@ var gameplayComponent = function () {
 
         }else if ( this.egyenloSor() === 1 ) {
             this.reset.style.display = "block";
-            this.cim.innerText = this.player2Name + " " + "winner";
+            this.cim.innerText = this.player2Name + " " + "won";
             this.alcim.innerText = null;
 
             this.nyertValaki = true;
