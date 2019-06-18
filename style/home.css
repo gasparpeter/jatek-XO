@@ -1,0 +1,22 @@
+#home-container {
+    width: 800px;
+    height: 400px;
+    /*background-color: maroon;*/
+    margin: 200px auto auto;
+    display: block;
+}
+
+#welcome {
+    color: #fcfff3;
+    font-size: 40px;
+    display: block;
+    margin:60px auto;
+}
+
+#home-btn {
+    width: 100px;
+    height: 50px;
+    background-color: #688b8a;
+    display: block;
+    margin: auto;
+}

@@ -27,7 +27,7 @@ input {
     height: 400px;
     /*background-color: maroon;*/
     margin: 200px auto auto;
-    display: block;
+    display: none;
 }
 
 #letsplay-gomb {
