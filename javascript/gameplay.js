@@ -85,9 +85,9 @@ var gameplayComponent = function () {
 
 
         this.igenBtn.addEventListener("click", function () {
-            // selfie.container.style.display = "none";
-            // lobby.startContainer.style.display = "block";
-            location.reload(true);
+            selfie.container.style.display = "none";
+            lobby.startContainer.style.display = "block";
+            // location.reload(true);
         });
 
         this.nemBtn.addEventListener("click", function () {
