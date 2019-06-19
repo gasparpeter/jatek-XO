@@ -10,7 +10,7 @@
     color: #fcfff3;
     font-size: 40px;
     display: block;
-    margin:60px auto;
+    margin-top: -10%;
 }
 
 #home-btn {
@@ -18,5 +18,12 @@
     height: 50px;
     background-color: #688b8a;
     display: block;
-    margin: auto;
+    margin:50px auto;
+}
+
+#h2szoveg {
+    font-size: 20px;
+    color: #b3d4fc;
+    display: block;
+    margin: 50px auto;
 }

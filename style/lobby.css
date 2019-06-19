@@ -32,8 +32,8 @@ input {
 
 #letsplay-gomb {
     /*border: none;*/
-    width: 600px;
-    height: 170px;
+    width: 400px;
+    height: 140px;
     background-color: #688b8a;
     margin: 100px auto auto;
     display: block;
