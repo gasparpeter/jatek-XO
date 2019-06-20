@@ -6,7 +6,12 @@ var lobbyComponent = function () {
     this.elsoJatekosInput = document.getElementById("name-input-player1");
     this.masodikJatekosInput = document.getElementById("name-input-player2");
     this.button = document.getElementById("letsplay-gomb");
+    this.back = document.getElementById("back-btn");
 
+    this.backListener = function () {
+        self.startContainer.style.display = "none";
+        home.homeContainer.style.display = "block";
+    };
 
 
 
@@ -33,7 +38,9 @@ var lobbyComponent = function () {
     this.startGameListener = this.startGameListener.bind( this );
 
 
-    this.button.addEventListener("click", this.startGameListener)
+    this.button.addEventListener("click", this.startGameListener);
+
+    this.back.addEventListener("click", this.backListener);
 };
 
 var lobby = new lobbyComponent();

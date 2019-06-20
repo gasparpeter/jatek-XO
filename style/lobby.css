@@ -73,3 +73,12 @@ label {
     display: block;
     margin-left: 75%;
 }
+
+#back-btn {
+    width: 100px;
+    height: 50px;
+    background-color: #688b8a;
+    color: #fffbf4;
+    font-size: 20px;
+    left: 0;
+}
