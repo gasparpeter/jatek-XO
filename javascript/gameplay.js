@@ -35,8 +35,15 @@ var gameplayComponent = function () {
     this.backToLobby        = document.getElementById("back-lobby");
     this.igenBtn            = document.getElementById("back-lobby1");
     this.nemBtn             = document.getElementById("back-lobby2");
+    this.backBtn             = document.getElementById("back-btn1");
 
 
+    this.backBtnListener = function () {
+      selfie.container.style.display = "none";
+      lobby.startContainer.style.display = "block";
+    };
+
+    this.backBtn.addEventListener("click", this.backBtnListener);
 
     this.startGame = function () {
 
